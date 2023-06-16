@@ -68,7 +68,7 @@ model.summary()
 train(model)
 
 input("Network has been trained. Press <Enter> to run program.")
-with open(sys.argv[1]) as f:
+with open("../input.txt") as f:
     for line in f:
         if line.isspace(): continue
         batch = encode_one_hot(line)

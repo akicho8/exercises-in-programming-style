@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, string
 
 # the global list of [word, frequency] pairs
@@ -9,7 +9,7 @@ with open('../stop_words.txt') as f:
 stop_words.extend(list(string.ascii_lowercase))
 
 # iterate through the file one line at a time 
-for line in open(sys.argv[1]):
+for line in open("../input.txt"):
     start_char = None
     i = 0
     for c in line:

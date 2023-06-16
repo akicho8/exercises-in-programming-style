@@ -1,6 +1,28 @@
-#!/usr/bin/env ruby
-require 'set'
-
-stops = ((IO.read '../stop_words.txt').split ',').to_set
-ARGF.read.downcase.scan(/[a-z]{2,}/).each_with_object(Hash.new 0){|w,c|c[w]+=1 if not stops.member? w}.sort_by{|w,c|-c}[0,25].each{|w,c|puts "#{w} - #{c}"}
-
+stop_words = IO.read("../stop_words.txt").scan(/\w+/)
+frequency = IO.read("../pride-and-prejudice.txt").downcase.scan(/[a-z]{2,}/).tally
+puts frequency.except(*stop_words).sort_by { -_2 }.take(25).map { |*e| e * " - " }
+# >> mr - 786
+# >> elizabeth - 635
+# >> very - 488
+# >> darcy - 418
+# >> such - 395
+# >> mrs - 343
+# >> much - 329
+# >> more - 327
+# >> bennet - 323
+# >> bingley - 306
+# >> jane - 295
+# >> miss - 283
+# >> one - 275
+# >> know - 239
+# >> before - 229
+# >> herself - 227
+# >> though - 226
+# >> well - 224
+# >> never - 220
+# >> sister - 218
+# >> soon - 216
+# >> think - 211
+# >> now - 209
+# >> time - 203
+# >> good - 201

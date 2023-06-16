@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string, time
 
 #
@@ -42,7 +42,7 @@ tracked_functions = [extract_words, frequencies, sort]
 for func in tracked_functions:
     globals()[func.__name__]=profile(func)
 
-word_freqs = sort(frequencies(extract_words(sys.argv[1])))
+word_freqs = sort(frequencies(extract_words("../input.txt")))
 
 for (w, c) in word_freqs[0:25]:
     print(w, '-', c)

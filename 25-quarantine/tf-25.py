@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -26,7 +26,7 @@ class TFQuarantine:
 #
 def get_input(arg):
     def _f():
-        return sys.argv[1]
+        return "../input.txt"
     return _f
 
 def extract_words(path_to_file):

@@ -63,7 +63,7 @@ model = build_model()
 model.summary()
 normalization_layer_set_weights(model.layers[0])
 
-with open(sys.argv[1]) as f:
+with open("../input.txt") as f:
     for line in f:
         if line.isspace(): continue
         batch = encode_one_hot(line)

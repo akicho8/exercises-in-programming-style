@@ -62,7 +62,7 @@ def main():
     # [4]: output with (1) or without (0) counts
     data_folder = 'words_data'
     if len(sys.argv) > 3: data_folder = data_folder + "_" + sys.argv[3]
-    generate_data(data_folder, int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), bool(int(sys.argv[4])))
+    generate_data(data_folder, int("../input.txt"), int(sys.argv[2]), int(sys.argv[3]), bool(int(sys.argv[4])))
 
 if __name__ == "__main__":
     main()

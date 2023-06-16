@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -30,7 +30,7 @@ class TFPassiveAggressive:
 #
 def get_input(ignore):
     assert(len(sys.argv) > 1), "You idiot! I need an input file! I quit!"
-    return sys.argv[1]
+    return "../input.txt"
 
 def extract_words(path_to_file):
     assert(type(path_to_file) is str), "I need a string! I quit!" 

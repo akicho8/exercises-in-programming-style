@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys, re, operator, string, traceback
 
@@ -6,8 +6,8 @@ import sys, re, operator, string, traceback
 # The functions
 #
 def extract_words(path_to_file):
-    assert(type(path_to_file) is str), "I need a string!" 
-    assert(path_to_file), "I need a non-empty string!" 
+    assert(type(path_to_file) is str), "I need a string!"
+    assert(path_to_file), "I need a non-empty string!"
 
     try:
         with open(path_to_file) as f:
@@ -15,7 +15,7 @@ def extract_words(path_to_file):
     except IOError as e:
         print("I/O error({0}) when opening {1}: {2}! I quit!".format(e.errno, path_to_file, e.strerror))
         raise e
-    
+
     pattern = re.compile('[\W_]+')
     word_list = pattern.sub(' ', str_data).lower().split()
     return word_list
@@ -60,7 +60,7 @@ def sort(word_freq):
 #
 try:
     assert(len(sys.argv) > 1), "You idiot! I need an input file!"
-    word_freqs = sort(frequencies(remove_stop_words(extract_words(sys.argv[1]))))
+    word_freqs = sort(frequencies(remove_stop_words(extract_words("../input.txt"))))
 
     assert(type(word_freqs) is list), "OMG! This is not a list!"
     assert(len(word_freqs) > 25), "SRSLY? Less than 25 words!"
@@ -69,4 +69,3 @@ try:
 except Exception as e:
     print("Something wrong: {0}".format(e))
     traceback.print_exc()
-    

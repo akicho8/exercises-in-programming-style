@@ -18,7 +18,7 @@ from six.moves import range
 import string, re, collections, os, sys, operator
 
 stopwords = set(open('../stop_words.txt').read().split(','))
-all_words = re.findall('[a-z]{2,}', open(sys.argv[1]).read().lower())
+all_words = re.findall('[a-z]{2,}', open("../input.txt").read().lower())
 words = [w for w in all_words if w not in stopwords]
 
 uniqs = [''] + list(set(words))

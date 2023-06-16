@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string, inspect
 
 #
@@ -54,7 +54,7 @@ def sort(word_freq):
 #
 # The main function
 #
-filename = sys.argv[1] if len(sys.argv) > 1 else "../input.txt"
+filename = "../input.txt" if len(sys.argv) > 1 else ""../input.txt""
 word_freqs = sort(frequencies(remove_stop_words(extract_words(filename))))
 
 for tf in word_freqs[0:25]:

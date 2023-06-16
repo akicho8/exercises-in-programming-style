@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string, os
 
 #
@@ -22,7 +22,7 @@ if len(sys.argv) > 1:
     extract_words_func = "lambda name : [x.lower() for x in re.split('[^a-zA-Z]+', open(name).read()) if len(x) > 0 and x.lower() not in stops]"
     frequencies_func = "lambda wl : frequencies_imp(wl)"
     sort_func = "lambda word_freq: sorted(word_freq.items(), key=operator.itemgetter(1), reverse=True)"
-    filename = sys.argv[1]
+    filename = "../input.txt"
 else:
     extract_words_func = "lambda x: []"
     frequencies_func = "lambda x: []"

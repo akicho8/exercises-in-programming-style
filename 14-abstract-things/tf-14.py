@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import abc, sys, re, operator, string
 
 #
@@ -99,4 +99,4 @@ class WordFrequencyController:
 #
 # The main function
 #
-WordFrequencyController(sys.argv[1]).run()
+WordFrequencyController("../input.txt").run()

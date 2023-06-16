@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -98,5 +98,5 @@ wfapp = WordFrequencyFramework()
 stop_word_filter = StopWordFilter(wfapp)
 data_storage = DataStorage(wfapp, stop_word_filter)
 word_freq_counter = WordFrequencyCounter(wfapp, data_storage)
-wfapp.run(sys.argv[1])
+wfapp.run("../input.txt")
 

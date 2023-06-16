@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import re, sys, operator
 
 # Mileage may vary. If this crashes, make it lower
@@ -33,7 +33,7 @@ def wf_print(wordfreq):
         wf_print(wordfreq[1:])
 
 stop_words = set(open('../stop_words.txt').read().split(','))
-words = re.findall('[a-z]{2,}', open(sys.argv[1]).read().lower())
+words = re.findall('[a-z]{2,}', open("../input.txt").read().lower())
 word_freqs = {}
 # Theoretically, we would just call count(words, stop_words, word_freqs)
 # Try doing that and see what happens.

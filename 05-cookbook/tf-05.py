@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, string
 
 # The shared mutable data
@@ -72,11 +72,10 @@ def sort():
     global word_freqs
     word_freqs.sort(key=lambda x: x[1], reverse=True)
 
-
 #
 # The main function
 #
-read_file(sys.argv[1])
+read_file("../input.txt")
 filter_chars_and_normalize()
 scan()
 remove_stop_words()

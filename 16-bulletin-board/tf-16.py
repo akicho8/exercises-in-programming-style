@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -101,4 +101,4 @@ class WordFrequencyApplication:
 em = EventManager()
 DataStorage(em), StopWordFilter(em), WordFrequencyCounter(em)
 WordFrequencyApplication(em)
-em.publish(('run', sys.argv[1]))
+em.publish(('run', "../input.txt"))

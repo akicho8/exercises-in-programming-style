@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 from abc import ABCMeta
 
@@ -78,4 +78,4 @@ class WordFrequencyController(TFExercise):
 #
 # The main function
 #
-WordFrequencyController(sys.argv[1]).run()
+WordFrequencyController("../input.txt").run()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string, inspect
 
 def read_stop_words():
@@ -37,7 +37,7 @@ def sort(word_freq):
     return sorted(locals()['word_freq'].items(), key=operator.itemgetter(1), reverse=True)
 
 def main():
-    word_freqs = sort(frequencies(extract_words(sys.argv[1])))
+    word_freqs = sort(frequencies(extract_words("../input.txt")))
     for (w, c) in word_freqs[0:25]:
         print(w, '-', c)
 

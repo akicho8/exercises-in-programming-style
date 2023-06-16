@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -49,4 +49,4 @@ def no_op(func):
 #
 # The main function
 #
-read_file(sys.argv[1], filter_chars)
+read_file("../input.txt", filter_chars)

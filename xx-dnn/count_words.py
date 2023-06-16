@@ -23,7 +23,7 @@ BATCH_SIZE = 50
 
 data_folder = 'words_data' 
 if len(sys.argv) > 1:
-    data_folder = data_folder + '_' + sys.argv[1]
+    data_folder = data_folder + '_' + "../input.txt"
 train_x = os.path.join(data_folder, 'train_x.txt')
 train_y = os.path.join(data_folder, 'train_y.txt')
 val_x = os.path.join(data_folder, 'val_x.txt')

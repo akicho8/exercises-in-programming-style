@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import re, sys, operator, queue, threading
 
 # Two data spaces
@@ -24,7 +24,7 @@ def process_words():
     freq_space.put(word_freqs)
 
 # Let's have this thread populate the word space
-for word in re.findall('[a-z]{2,}', open(sys.argv[1]).read().lower()):
+for word in re.findall('[a-z]{2,}', open("../input.txt").read().lower()):
     word_space.put(word)
 
 # Let's create the workers and launch them at their jobs

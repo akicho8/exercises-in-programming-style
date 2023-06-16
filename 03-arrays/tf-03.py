@@ -2,7 +2,7 @@ import sys, string
 import numpy as np
 
 # Example input: "Hello  World!" 
-characters = np.array([' ']+list(open(sys.argv[1]).read())+[' '])
+characters = np.array([' ']+list(open("../input.txt").read())+[' '])
 # Result: array([' ', 'H', 'e', 'l', 'l', 'o', ' ', ' ', 
 #           'W', 'o', 'r', 'l', 'd', '!', ' '], dtype='<U1')
 

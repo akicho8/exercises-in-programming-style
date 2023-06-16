@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 import operator
 import string
@@ -51,7 +51,7 @@ def count_and_sort(filename):
 #
 # The main function
 #
-for word_freqs in count_and_sort(sys.argv[1]):
+for word_freqs in count_and_sort("../input.txt"):
     print("-----------------------------")
     for (w, c) in word_freqs[0:25]:
         print(w, '-', c)

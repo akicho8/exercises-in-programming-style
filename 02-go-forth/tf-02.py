@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -26,13 +26,20 @@ def read_file():
 
 def filter_chars():
     """
-    Takes data on the stack and places back a copy with all 
-    nonalphanumeric chars replaced by white space. 
+    Takes data on the stack and places back a copy with all
+    nonalphanumeric chars replaced by white space.
     """
     # This is not in style. RE is too high-level, but using it
     # for doing this fast and short. Push the pattern onto stack
     stack.append(re.compile('[\W_]+'))
     # Push the result onto the stack
+
+    # print("aaaaaaaaa")
+    # print(stack.pop())
+    # print("aaaaaaaaa")
+    # exit
+    # stack.pop().sub(' ', stack.pop()[0])
+
     stack.append([stack.pop().sub(' ', stack.pop()[0]).lower()])
 
 def scan():
@@ -45,7 +52,7 @@ def scan():
     stack.extend(stack.pop()[0].split())
 
 def remove_stop_words():
-    """ 
+    """
     Takes a list of words on the stack and removes stop words.
     """
     f = open('../stop_words.txt')
@@ -53,6 +60,7 @@ def remove_stop_words():
     f.close()
     # add single-letter words
     stack[-1].extend(list(string.ascii_lowercase))
+
     heap['stop_words'] = stack.pop()
     # Again, this is too high-level for this style, but using it
     # for doing this fast and short. Left as exercise.
@@ -63,8 +71,8 @@ def remove_stop_words():
         else:
             heap['words'].append(stack.pop()) # pop it, store it
     stack.extend(heap['words']) # Load the words onto the stack
-    del heap['stop_words']; del heap['words'] # Not needed 
-    
+    del heap['stop_words']; del heap['words'] # Not needed
+
 def frequencies():
     """
     Takes a list of words and returns a dictionary associating
@@ -73,7 +81,7 @@ def frequencies():
     heap['word_freqs'] = {}
     # A little flavour of the real Forth style here...
     while len(stack) > 0:
-        # ... but the following line is not in style, because the 
+        # ... but the following line is not in style, because the
         # naive implementation would be too slow
         if stack[-1] in heap['word_freqs']:
             # Increment the frequency, postfix style: f 1 +
@@ -83,7 +91,7 @@ def frequencies():
         else:
             stack.append(1) # Push 1 in stack[2]
         # Load the updated freq back onto the heap
-        heap['word_freqs'][stack.pop()] = stack.pop()  
+        heap['word_freqs'][stack.pop()] = stack.pop()
 
     # Push the result onto the stack
     stack.append(heap['word_freqs'])
@@ -95,7 +103,7 @@ def sort():
 
 # The main function
 #
-stack.append(sys.argv[1])
+stack.append("../input.txt")
 read_file(); filter_chars(); scan(); remove_stop_words()
 frequencies(); sort()
 
@@ -107,4 +115,3 @@ while stack[-1] < 25 and len(stack) > 1:
     (w, f) = stack.pop(); print(w, '-', f)
     stack.append(heap['i']); stack.append(1)
     stack.append(stack.pop() + stack.pop())
-

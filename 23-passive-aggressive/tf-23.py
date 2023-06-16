@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -46,7 +46,7 @@ def sort(word_freqs):
 #
 try:
     assert(len(sys.argv) > 1), "You idiot! I need an input file! I quit!"
-    word_freqs = sort(frequencies(remove_stop_words(extract_words(sys.argv[1]))))
+    word_freqs = sort(frequencies(remove_stop_words(extract_words("../input.txt"))))
 
     assert(len(word_freqs) > 25), "OMG! Less than 25 words! I QUIT!"
     for tf in word_freqs[0:25]:

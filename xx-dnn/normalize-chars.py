@@ -122,7 +122,7 @@ for iteration in range(1, 12):
         print('T:', correct)
         print('G:', guess)
 
-with open(sys.argv[1]) as f:
+with open("../input.txt") as f:
     for line in f:
         if line.isspace(): continue
         onehots = encode_one_hot(line)

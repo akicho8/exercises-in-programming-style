@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 class DataStorageManager():
@@ -95,6 +95,6 @@ class WordFrequencyController():
 # The main function
 #
 wfcontroller = WordFrequencyController()
-wfcontroller.dispatch(['init', sys.argv[1]])
+wfcontroller.dispatch(['init', "../input.txt"])
 wfcontroller.dispatch(['run'])
 

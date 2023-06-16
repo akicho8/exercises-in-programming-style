@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 #
@@ -61,7 +61,7 @@ def top25_freqs(word_freqs):
 #
 # The main function
 #
-TFTheOne(sys.argv[1])\
+TFTheOne("../input.txt")\
 .bind(read_file)\
 .bind(filter_chars)\
 .bind(normalize)\

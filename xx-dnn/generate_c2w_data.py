@@ -67,7 +67,7 @@ def main():
     train_y = os.path.join(data_folder, 'train_y.txt')
     val_x = os.path.join(data_folder, 'val_x.txt')
     val_y = os.path.join(data_folder, 'val_y.txt')
-    generate_data(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), data_folder, train_x, train_y, val_x, val_y)
+    generate_data(int("../input.txt"), int(sys.argv[2]), int(sys.argv[3]), data_folder, train_x, train_y, val_x, val_y)
 
 if __name__ == "__main__":
     main()

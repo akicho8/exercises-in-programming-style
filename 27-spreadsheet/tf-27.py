@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, itertools, operator
 
 #
@@ -40,7 +40,7 @@ def update():
 
 
 # Load the fixed data into the first 2 columns
-all_words[0] = re.findall('[a-z]{2,}', open(sys.argv[1]).read().lower())
+all_words[0] = re.findall('[a-z]{2,}', open("../input.txt").read().lower())
 stop_words[0] = set(open('../stop_words.txt').read().split(','))
 # Update the columns with formulas
 update()

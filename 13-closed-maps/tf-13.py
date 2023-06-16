@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, re, operator, string
 
 # Auxiliary functions that can't be lambdas
@@ -37,7 +37,7 @@ word_freqs_obj = {
     'sorted' : lambda : sorted(word_freqs_obj['freqs'].items(), key=operator.itemgetter(1), reverse=True)
 }
 
-data_storage_obj['init'](sys.argv[1])
+data_storage_obj['init']("../input.txt")
 stop_words_obj['init']()
 
 for w in data_storage_obj['words']():

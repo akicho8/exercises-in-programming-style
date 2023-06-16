@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, configparser, importlib.machinery
 
 def load_plugins():
@@ -11,7 +11,7 @@ def load_plugins():
     tffreqs = importlib.machinery.SourcelessFileLoader('tffreqs', frequencies_plugin).load_module()
 
 load_plugins()
-word_freqs = tffreqs.top25(tfwords.extract_words(sys.argv[1]))
+word_freqs = tffreqs.top25(tfwords.extract_words("../input.txt"))
 
 for (w, c) in word_freqs:
     print(w, '-', c)

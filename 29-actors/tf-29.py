@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys, re, operator, string
 from threading import Thread
@@ -127,7 +127,7 @@ stop_word_manager = StopWordManager()
 send(stop_word_manager, ['init', word_freq_manager])
 
 storage_manager = DataStorageManager()
-send(storage_manager, ['init', sys.argv[1], stop_word_manager])
+send(storage_manager, ['init', "../input.txt", stop_word_manager])
 
 wfcontroller = WordFrequencyController()
 send(wfcontroller, ['run', storage_manager])
