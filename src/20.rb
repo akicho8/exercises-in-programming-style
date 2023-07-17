@@ -2,11 +2,11 @@
 
 # メインプログラムはそのままで実装を切り替える
 
-#+include: src/config.yml yaml:config.yml
+#+code_include: src/config.yml yaml:config.yml
 
-#+include: src/extract_words1.rb ruby:extract_words1.rb
+#+code_include: src/extract_words1.rb ruby:extract_words1.rb
 
-#+include: src/frequencies1.rb ruby:frequencies1.rb
+#+code_include: src/frequencies1.rb ruby:frequencies1.rb
 
 #+BEGIN_SRC ruby:main.rb
 require "yaml"

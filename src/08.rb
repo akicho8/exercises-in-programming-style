@@ -60,4 +60,4 @@ print_all word_freqs.sort_by { -_2 }.take(25)
 # >> good - 201
 #+END_SRC
 
-# デフォルトでは末尾再帰最適化が効いていないので普通に実行するとスタックが死ぬ。その場合 `tailcall_optimization: true` で該当コードをコンパイルするか `words.each_slice(1000)` などとして `count` を分割して呼ぶ。
+# デフォルトでは末尾再帰最適化が効いていないので普通に実行するとスタックが死ぬ。その場合 `tailcall_optimization: true` で該当コードをコンパイルするか words.each_slice(1000) などとして count を分割して呼ぶ。
